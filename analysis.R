@@ -14,6 +14,7 @@ title("TOTAL FATALITIES IN US")
 econ_damage <- data$PROPDMG + data$CROPDMG
 data <- cbind(data,econ_damage)
 
+economic_damage <- aggregate(econ_damage~EVTYPE,data,sum)
 economic_damage <- economic_damage[order(economic_damage$econ_damage,decreasing = TRUE),]
 economic_damage[1:20,]
 with(economic_damage[1:5,],barplot(econ_damage,col=1:5,names.arg = EVTYPE))

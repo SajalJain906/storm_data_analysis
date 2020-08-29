@@ -423,7 +423,8 @@ data &lt;- cbind(data,econ_damage)
 
 <p>TOP 20 economic damage causing disasters</p>
 
-<pre><code class="r">economic_damage &lt;- economic_damage[order(economic_damage$econ_damage,decreasing = TRUE),]
+<pre><code class="r">economic_damage &lt;- aggregate(econ_damage~EVTYPE,data,sum)
+economic_damage &lt;- economic_damage[order(economic_damage$econ_damage,decreasing = TRUE),]
 economic_damage[1:20,]
 </code></pre>
 

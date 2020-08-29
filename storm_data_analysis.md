@@ -256,6 +256,7 @@ TOP 20 economic damage causing disasters
 
 
 ```r
+economic_damage <- aggregate(econ_damage~EVTYPE,data,sum)
 economic_damage <- economic_damage[order(economic_damage$econ_damage,decreasing = TRUE),]
 economic_damage[1:20,]
 ```
