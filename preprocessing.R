@@ -4,6 +4,11 @@ data <- read.csv("repdata_data_StormData.csv.bz2")
 head(data)
 str(data)
 
+sum(is.na(data$PROPDMG))
+sum(is.na(data$PROPDMGEXP))
+sum(is.na(data$CROPDMG))
+sum(is.na(data$CROPDMGEXP))
+
 ## for the property damage
 
 foo <- data$PROPDMGEXP == "K" | data$PROPDMGEXP == "k"
